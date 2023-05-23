@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- #links index.html to the css file -->
+    <link rel='stylesheet' href="index.css">
+
+</head>
+<body>
+   <!-- används för att visa en rubrik och innehållet i taggen kan ändras men hjälp av javascript -->
+    <h1 id="title"></h1>
+    <!-- för att visa tiden kan även ändras med javascript -->
+    <p id="time"></p>
+    <!-- inehåller en bild med id picture och källan skog.jpeg kommer visas på sidan -->
+    <div id="content">
+    <img id="picture" src="skog.jpeg" alt="Bild">
+    </div>
+<div class = "rox">
+    <!-- det finns tre <div> elementet med klassen rox och varje <div> innehåller gruppar av knappar -->
+    <div style="display: flex; align-items: center;">
+        <!-- Knappar här i första diven är kopplade till javascript funktionerna changeBgcol, goodvibes header fungerar ej för har inte skapat en korrekt javascript funktion till den.  -->
+        <button class='button'onclick="changeBgcol()">Change Bg</button>
+        <button class='button'onclick="changePicture()">Change picture</button>
+        <button class='button'onclick="Header()">Header</button>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <!-- samma med knapparna här men de är kopplade med andra javascript funktioner som ändrar sidans innehåll döljer bilder removeheader fungerar ej för har inte skapat en korrekt javascript funktion till den.. -->
+        <button class='button'onclick="goodvibes()">Good vibes</button>
+        <button class='button'onclick="hidePicture()">Hide picture</button>
+        <button class='button'onclick="Removeheader()">Remove header</button>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <!-- knapparna här är också kopplade till javascript funktioner som är att den kan visa tiden, Time() och visa bild showPicture() men showHeader fungerar ej pga att jag ej skapat en korrekt javascript funktion för den. -->
+        <button class='button'onclick="Time()">Time</button>
+        <button class='button'onclick="showPicture()">Show picture</button>
+        <button class='button'onclick="showHeader()">Show Header</button>
+    </div>
+</div>
+
+    <!-- inom <script> taggen finns de javascript funktionerna för att ändra tex sidans inehåll. Funktionerna använder DOM för att manipulera olika element på sidan -->
+    <script>
+        // ändrar bakgrundsförg
+        function changeBgcol()  {
+            document.body.style.backgroundColor = "Red";
+        }
+        // Gör så att titeln säger Good vibes
+        function goodvibes()    {
+            document.getElementById("title").textContent = "Good vibes"
+        }
+        // visar tiden
+        function Time() {
+            var timezone = new Date().toLocaleTimeString();
+            document.getElementById('time').textContent = 'Your time is: ' + timezone;
+        }
+        // ändrar bild från orginalen till ele.jpg
+        function changePicture() {
+            document.getElementById('picture').src = 'ele.jpg';
+        }
+        // gömmer bilden 
+        function hidePicture() {
+
+            document.getElementById('picture').style.display = 'none';
+        }
+        // visar bilden ele.jpg
+        function showPicture(){
+
+            document.getElementById('picture').style.display = 'block';
+        }
+        
+    </script>
+
+    
+</body>
+</html>
