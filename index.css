@@ -8,8 +8,25 @@
     width: 75px;
     border-radius: 5px;
     margin : 2vh 3vw 2vh 3vw;
+    /* då den ändrar storlek anpassar den sig på 0.3 sekunder */
+    transition: all 0.3s;
 }
+/* med media screen max-width och max-height ändras knapparnas storlek då skärmen blir mindre än de värden som står */
+@media screen and (max-width:800px), (max-height:500px) {
+    .button{
 
+    border: 3px solid lightblue;
+    /* Färgen på knapparna blir aquamarine */
+    background-color: aquamarine;
+    /* höjd och läng på knapparna och det med margin är i procent av viewport. */
+    height: 35px;
+    width: 55px;
+    border-radius: 5px;
+    margin : 2vh 3vw 2vh 3vw;
+    /* då den ändrar storlek anpassar den sig på 0.3 sekunder */
+    transition: all 0.3s;
+    }
+}
 
 
 .button:hover{
@@ -28,7 +45,7 @@
     background-color:   blue;
     top: 50%;
     left: 50%;
-    /* den här kommandet translate används för att ändra positionen för x axen och y axeln baseat på parametrarna */
+    /* den här kommandet translate används för att ändra positionen för x axeln och y axeln baseat på parametrarna */
     transform: translate(-50%, -50%);
     /* max bredden är 100 procent och höjd är då auto och med min-width:1% så kan minsta bredden vara 1% */
     max-width:100%;height: auto;
@@ -46,17 +63,12 @@
     /* 3 vw 3% viewport. Jag vill även säga att det med vh gör sidan responsiv
      också eftersom den ändrar storlek beroende på hur många procent användaren
       ska se beroende på viewport tex om viewporten är 50 cm bred och det står 1vw så är den 0.5cm */
+
+
+
+/* Ändrar textstorlek på tid och titeln */
 #time , #title{
-    font-size: 3vw;
-}
-
-#content{
-
-    max-width: 768px;
-    min-width: 200px;
-    max-height: 600px;
-    min-height: 150px;
-    
+    font-size: 3vh;
 }
 
   
